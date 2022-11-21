@@ -1,0 +1,686 @@
+:root {
+	--coloredText: #CC5803;
+	--neutralText: #333333;
+	--colorDark: #E2711D;
+	--colorMid: #FF9505;
+	--colorLight: #FFB627;
+	--Background: #FFCB70;
+	--Highlight: #ffdea9;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--Background);
+}
+
+@font-face {
+	font-family: oswald;
+	src: url(resources/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: libre;
+	src: url(resources/gemunu-libre.bold.otf);
+}
+
+.error {color: #FF0000;}
+
+a #logo {
+	position: fixed;
+	z-index: 1;
+	height: 150px;
+	top: 0;
+	left: 0;
+	padding: 0;
+	float: left;
+}
+
+b {
+	color: var(--coloredText);
+}
+
+.profileDiv {
+	font-family: oswald;
+	position: fixed;
+	float: right;
+	top: 0;
+	right: 0;
+	width: 100px;
+	margin: 5px;
+}
+
+#profileImage {
+	width: 100px;
+	display: block;
+}
+
+#profileLink {
+	display: block;
+	text-align: center;
+}
+
+canvas {
+	border:1px solid var(--neutralText);
+}
+
+textarea {
+	width: 100%;
+	background: var(--Highlight);
+	color: var(--coloredText);
+	
+	border: dotted 2px var(--colorDark);
+}
+
+textarea:focus {
+    outline: none !important;
+    border: inset 2px var(--colorDark);
+  }
+
+.scrollable {
+	padding-left: 20px;
+	overflow:hidden; 
+	overflow-y:scroll;
+	min-height:300px;
+	height:15%;
+	width: 40%; 
+	max-height:auto;
+	border: outset var(--colorLight) 2px;
+	float: left;
+}
+/*Custom Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+  background: var(--Highlight);
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--colorDark); 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--colorDark) ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coloredText); 
+}
+
+button.delete {
+	float: right;
+}
+
+dt:nth-child(odd) {
+	background: var(--colorLight);
+	color: var(--coloredText);
+	margin: 2px;
+}
+
+.CanvasEl {
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+.square {
+	height: 20px;
+	width: 20px;
+	margin: 10px;
+}
+
+.header {
+	font-family: oswald;
+	margin-left: 15%;
+	padding-left: 20px;
+	font-size: 50px;
+	height: 150px;
+	color: var(--coloredText);
+}
+
+.header h1 {
+	line-height: 0.0;
+}
+
+p {
+	color: var(--neutralText);
+}
+
+.sidenav {
+	font-family: oswald;
+	height: 100%;
+	width: 15%;
+	position: fixed;
+	z-index: 1;
+	top: 150px;
+	left: 0;
+	background-color: var(--Background);
+	overflow-x: hidden;
+}
+
+.sidenav a {
+	color: var(--neutralText);
+	background-color: var(--colorDark);
+	padding: 18px;
+	text-decoration: none;
+	display: block;
+	border-color: var(--colorDark);
+	border-style: outset;
+}
+
+.sidenav a:hover {
+	color: white;
+	background-color: var(--colorMid);
+	border-color: var(--colorMid);
+	border-style: inset;
+}
+
+.content {
+	font-family: libre;
+	margin-left: 15%;
+	font-size: 18px;
+}
+
+.content-child {
+	margin-bottom: 2px;
+	float: left;
+	width: 48%;
+}
+
+.tabcontent {
+	border-style: dotted;
+	border-color: var(--colorDark);
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 15%;
+	padding-left: 20px;
+	font-size: 18px;
+	display: none;
+	border-top: none;
+	
+	font-family: libre;
+	float: left;
+	width: 85%;
+}
+
+.tab-child {
+	float: left;
+	padding-left: 20px;
+}
+
+h2 {
+	font-family: oswald;
+	color: var(--coloredText);
+	font-size: 30px;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+li {
+	position: relative;
+	padding-left: 20px;
+	color: var(--neutralText);
+}
+
+li::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-image: url(resources/Bee.svg);
+	transform: rotate(90deg);
+	background-size: cover;
+    background-position: center;
+    left: 0;
+}
+
+a {
+	color: var(--coloredText);
+}
+
+a:hover {
+	color: var(--colorMid);
+}
+
+label {
+	font-size: 18px;
+	color: var(--neutralText);
+}
+
+input[type=text], input[type=password], input[type=email] {
+	font-family: oswald;
+	background-color: var(--colorLight);
+	border-color: var(--colorLight);
+	border-style: inset;
+	margin: 3px;
+	font-size: 18px;
+	color: var(--neutralText);
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+	font-family: oswald;
+	outline: none;
+	background-color: var(--Background);
+	border-color: var(--Background);
+	border-style: inset;
+	margin: 3px;
+	font-size: 18px;
+	color: var(--neutralText);
+}
+
+input[type=button], input[type=submit], input[type=reset], button {
+	background-color: var(--colorDark);
+	border-color: var(--colorDark);
+	border-style: outset;
+	margin: 5px;
+	font-size: 14px;
+	color: var(--neutralText);
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active, button:active {
+	background-color: var(--Background);
+	border-color: var(--Background);
+	border-style: inset;
+	margin: 5px;
+	font-size: 14px;
+	color: var(--neutralText);
+}
+
+input[type=button]:disabled, input[type=submit]:disabled, input[type=reset]:disabled, button:disabled 
+{
+	background-color: var(--colorLight);
+	border-color: var(--colorLight);
+	border-style: inset;
+	margin: 5px;
+	font-size: 14px;
+	color: var(--neutralText);
+}
+
+input[type=checkbox] {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	color: var(--neutralText);
+}
+
+#highlightingGrid {
+	background-color: var(--colorMid);
+	font-size: 18px;
+}
+
+#highlightingGrid th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: var(--colorMid);
+	border-color: var(--colorMid);
+	border-style: outset;
+	border-width: 2px;
+	font-weight: normal;
+	color: var(--neutralText);
+}
+
+#highlightingGrid td {
+	padding-left: 8px;
+	background-color: var(--Background);
+	border-color: var(--Background);
+	border-style: outset;
+	border-width: 2px;
+	color: var(--neutralText);
+}
+
+#highlightingGrid td:hover {
+	border-color: var(--Highlight);
+	border-style: inset;
+	border-width: 2px;
+}
+
+table {
+	float: left;
+	background-color: var(--colorMid);
+	font-size: 18px;
+}
+
+table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: var(--colorMid);
+	border-color: var(--colorMid);
+	border-style: outset;
+	border-width: 2px;
+	font-weight: normal;
+	color: var(--neutralText);
+}
+
+table td {
+	padding-left: 8px;
+	background-color: var(--Background);
+	border-color: var(--Background);
+	border-style: outset;
+	border-width: 2px;
+	color: var(--neutralText);
+}
+
+form {
+	border-style: dotted;
+	border-width: 2px;
+	border-color: var(--colorDark);
+	color: var(--neutralText);
+}
+
+fieldset {
+	border-style: dotted;
+	border-color: var(--colorDark);
+	color: var(--neutralText);
+}
+
+fieldset legend {
+	font-size: 18px;
+	font-family: oswald;
+	color: var(--neutralText);
+}
+
+.CheckContainer {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	min-width: 100px;
+	max-width: 200px;
+	height: 20px;
+}
+
+/* Hide the browser's default checkbox */
+.CheckContainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: var(--Highlight);
+}
+
+/* On mouse-over, add a grey background color */
+.CheckContainer:hover input ~ .checkmark {
+	background-color: var(--colorLight);
+}
+
+/* When the checkbox is checked, add a blue background */
+.CheckContainer input:checked ~ .checkmark {
+	background-color: var(--coloredText);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.CheckContainer input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.CheckContainer .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.RadioContainer {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	min-width: 100px;
+	max-width: 200px;
+	height: 20px;
+}
+
+/* Hide the browser's default radio button */
+.RadioContainer input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Custom radio button */
+.radio {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: var(--Highlight);
+	border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.RadioContainer:hover input ~ .radio {
+	background-color: var(--colorLight);
+}
+
+/* When the radio button is checked, add a blue background */
+.RadioContainer input:checked ~ .radio {
+	background-color: var(--coloredText);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.RadioContainer input:checked ~ .radio:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.RadioContainer .radio:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/* Tab Styles */
+.tab {
+	margin-left: 15%;
+	font-size: 18px;
+	overflow: hidden;
+	background-color: var(--coloredText);
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	font-size: 18px;
+	float: left;
+	color: var(--colorMid);
+	background-color: var(--coloredText);
+	padding: 18px;
+	text-decoration: none;
+	display: block;
+	border-color: var(--coloredText);
+	border-style: outset;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	color: var(--neutralText);
+	background-color: var(--colorMid);
+	border-color: var(--colorMid);
+	border-style: inset;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	color: var(--neutralText);
+	background-color: var(--colorMid);
+	border-color: var(--colorMid);
+	border-style: inset;
+}
+
+/* Style the dropdown */
+select {
+	font-family: oswald;
+	width: 100%;
+	min-width: 15ch;
+	max-width: 25ch;
+	border-color: var(--colorLight);
+	border-style: inset;
+	border-width: 2px;
+	font-size: 18px;
+	cursor: pointer;
+	background-color: var(--colorLight);
+	outline: none;
+	color: var(--neutralText);
+}
+
+/* Pop up design */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed;
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+	position: relative;
+	background-color: var(--Background);
+	top: 30%;
+	margin: auto;
+	padding: 0;
+	border:outset var(--Background);
+	width: 80%;
+	color: var(--neutralText);
+}
+
+.modal h1{
+	color: var(--coloredText);
+	font-size: 30px;
+}
+
+.modal p{
+	color: var(--neutralText);
+	font-size: 18px;
+	font-weight: lighter
+}
+
+.close {
+	padding: 20px;
+	color: var(--colorLight);
+	float: right;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: var(--colorDark);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Highlight);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--colorMid);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
